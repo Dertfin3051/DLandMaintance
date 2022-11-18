@@ -1,0 +1,12 @@
+name: DLand_Maintance
+version: '${project.version}'
+main: dland_maintance.dland_maintance.DLand_Maintance
+api-version: 1.16
+authors: [ dertfin ]
+description: Создаёт режим тех=работ на сервере DLand
+
+commands:
+  maintance:
+    aliases:
+      - techworks
+    usage: Error in DLand_Maintance Plugin!

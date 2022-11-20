@@ -1,0 +1,25 @@
+# DLand Maintance Config
+
+# Все сообщения автоматически подсвечиваются красным цветом
+
+# /maintance maintance
+maintance:
+  line1 : "На сервере идут Тех-Работы"
+  line2 : ""
+  line3 : "*стандартное сообщение DLand Maintance*"
+
+# /maintance custom
+custom:
+  line1 : "На сервере идут тех-работы Тех-Работ"
+  line2 : "Причина не указана"
+  line3 : "*стандартное сообщение DLand Maintance*"
+
+# /maintance bugfix
+bugfix:
+  line1: "На сервере идёт Фикс-Бага"
+  line2: ""
+  line3: "*стандартное сообщение DLand Maintance*"
+
+# Permissions:
+# maintance.admin - Вкл/Выкл Тех-Работ
+# maintance.bypass - Обход Тех-Работ

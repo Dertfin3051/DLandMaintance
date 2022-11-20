@@ -4,6 +4,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.plugin.Plugin;
 
 public class Maintance implements CommandExecutor {
     public static String status = "off";
@@ -25,16 +27,19 @@ public class Maintance implements CommandExecutor {
                 sender.sendMessage("" + ChatColor.GREEN + ChatColor.BOLD + "Включен режим : Сервер Открыт!");
                 return true;
             } else if (args[0].equalsIgnoreCase("custom")) {
-                if (args.length==1) {
-                    status = "Custom";
-                    status_msg = ChatColor.RED + args[1];
-                    sender.sendMessage("" + ChatColor.RED + ChatColor.BOLD + "Включен режим : " + status_msg);
-                } else {
-                    sender.sendMessage(ChatColor.RED + "Error : Вы не указали статус!");
-                }
+                status = "Custom";
+                sender.sendMessage("" + ChatColor.RED + ChatColor.BOLD + "Включен режим : Custom");
+                return true;
+            } else if (args[0].equalsIgnoreCase("reload")) {
+                Plugin plugin = DLand_Maintance.getPlugin(DLand_Maintance.class);
+                plugin.reloadConfig();
+                plugin.saveConfig();
+                sender.sendMessage(ChatColor.GREEN + "Конфиг перезагружен! ");
+                return true;
             }
         } else {
             sender.sendMessage(ChatColor.RED + "У вас нет прав на данную команду! ");
+            return true;
         }
         return false;
     }

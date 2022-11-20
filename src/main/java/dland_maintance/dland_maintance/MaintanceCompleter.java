@@ -14,6 +14,8 @@ public class MaintanceCompleter implements TabCompleter {
         args1.add("maintance");
         args1.add("bugfix");
         args1.add("off");
+        args1.add("custom");
+        args1.add("reload");
         if (args.length == 1) {
             return args1;
         }

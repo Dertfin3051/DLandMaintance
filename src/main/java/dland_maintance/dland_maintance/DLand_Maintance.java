@@ -8,6 +8,7 @@ public final class DLand_Maintance extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         getCommand("maintance").setExecutor(new Maintance());
+        getCommand("maintance").setTabCompleter(new MaintanceCompleter());
         getServer().getPluginManager().registerEvents(new MaintanceEvent(),this);
     }
 

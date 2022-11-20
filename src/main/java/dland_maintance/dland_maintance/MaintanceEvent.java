@@ -24,6 +24,15 @@ public class MaintanceEvent implements Listener {
             } else {
                 event.getPlayer().kickPlayer(ChatColor.RED + "На сервере идёт фикс бага. Перезайдите позже");
             }
-        } else if (Maintance.status.equals("off")) {}           // Тут ничего не происходит
+        } else if (Maintance.status.equals("off")) {
+            // Тут ничего не происходит
+        } else if (Maintance.status.equals("Custom")) {
+            if (event.getPlayer().hasPermission("maintance.bypass")) {
+                event.getPlayer().sendMessage(ChatColor.RED + "Добро пожаловать, Админ! На сервере включен статус : " + Maintance.status_msg);
+                event.getPlayer().sendMessage(ChatColor.RED + "В данный момент игроки не могут зайти на сервер. Используй '/maintance off' для отключения этого режима.");
+            } else {
+                event.getPlayer().kickPlayer(Maintance.status_msg);
+            }
+        }
     }
 }
